@@ -16,6 +16,9 @@ export default {
 			animation: {
 				'border-expand': 'border-expand 0.5s ease-out forwards',
 			},
+			height: {
+        'screen-minus-20': 'calc(100vh - 80px)',
+      },
 		},
 	},
 	plugins: [],

@@ -5,60 +5,46 @@ import { AiFillInstagram } from "react-icons/ai";
 import Navbar from "../components/navbar";
 import { useEffect, useState } from "react";
 import { Router } from "react-router-dom";
+import { CiSquareChevUp } from "react-icons/ci";
 
 function Home() {
-	const [isVisible, setIsVisible] = useState(false);
-
-	useEffect(() => {
-		const handleScroll = () => {
-			if (window.scrollY > 1) {
-				setIsVisible(true);
-			} else {
-				setIsVisible(false);
-			}
-		};
-
-		// Attach the scroll event listener
-		window.addEventListener("scroll", handleScroll);
-
-		// Clean up the event listener
-		return () => {
-			window.removeEventListener("scroll", handleScroll);
-		};
-	}, []);
-
 	return (
 		<>
-			{/* Navbar */}
-			<div
-				className={`w-full md:h-[10vh] h-[8vh] bg-white fixed flex justify-end z-50 navbar transition-transform duration-300 ${
-					isVisible ? "translate-y-0" : "-translate-y-full"
-				}`}>
-			
-					<Navbar />
-			
-			</div>
-
-			{/* Main Content */}
-			<div className="w-full h-screen">
+			{/* socail icon section */}
+			<div className="w-full h-full relative">
+				<div className="w-24 h-20 hover:h-auto pt-8 absolute bottom-[35%] tras left-0  flex flex-col z-10 items-center justify-end ">
+				
+					<div className="flex   ">
+						<div className="border  rounded-md p-2 flex flex-col gap-y-8">
+							<FaFacebookF className="w-10 h-10 hover:bg-purple-300 p-2 rounded-md cursor-pointer " />
+							<AiFillInstagram className="w-10 h-10 hover:bg-purple-300 p-2 rounded-md cursor-pointer" />
+							<FaLinkedin className="w-10 h-10 hover:bg-purple-300 p-2 rounded-md cursor-pointer" />
+							<IoLogoGithub className="w-10 h-10 hover:bg-purple-300 p-2 rounded-md cursor-pointer" />
+						</div>
+					</div>
+				</div>
 				{/* Spacer to prevent content overlap */}
 
 				{/* Home Section */}
-				<div className="w-full h-[90vh] bg-transparent">
-					<div className="w-[95%] md:w-[80%] h-[10vh] bg-transparent flex  relative m-auto gap-x-4 py-4 items-center">
-						<FaFacebookF className="text-2xl cursor-pointer text-white hover:text-blue-500" />
-						<IoLogoGithub className="text-2xl cursor-pointer text-white hover:text-blue-500" />
-						<FaLinkedin className="text-2xl cursor-pointer text-white hover:text-blue-500" />
-						<AiFillInstagram className="text-2xl cursor-pointer text-white hover:text-blue-500" />
-					</div>
 
-					<div className=" w-[95%] md:w-[80%] h-[92vh] gap-y-6  md:h-[90vh] bg-transparent m-auto flex flex-col justify-center md:gap-y-8 ">
-						<h1 className="text-3xl md:text-5xl text-white">HELLO , I am</h1>
-						<span className="text-3xl md:text-6xl text-white">Dhanushka Basnayaka</span>
-						<span className="md:text-xl text-white">Web Developer</span>
-						<button className=" bg-blue-500 flex justify-center py-1 md:px-4 px-2 w-24 md:w-40 text-white rounded-sm">
+				<div className="w-full h-full  flex items-center justify-center">
+					<div className="w-[50%] h-[300px]  mx-auto flex flex-col justify-start items-center">
+						<span className="text-5xl font-semibold mt-2">
+							Hey, I'm Dhanushka Basnayaka
+						</span>
+						<span className="w-[70%] text-lg mt-6 text-justify">
+							A Result-Oriented Web Developer building and managing Websites and
+							Web Applications that leads to the success of the overall product{" "}
+						</span>
+						<div className="  w-full items-center justify-center flex  gap-x-4">
+						<button className="mt-12 w-auto bg-purple-500 px-20 rounded-md text-white text-center text-lg py-2 text hover:bg-white hover:border-purple-500 hover:text-purple-500 border uppercase">
 							Resume
 						</button>
+						<button className="mt-12 w-auto bg-white text-purple-500 border  px-20 rounded-md border-purple-500 text-center text-lg py-2 text uppercase">
+							Projects
+						</button>
+							
+						</div>
 					</div>
 				</div>
 			</div>

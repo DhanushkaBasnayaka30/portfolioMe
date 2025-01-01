@@ -2,11 +2,10 @@ import { useEffect, useRef, useState } from "react";
 import { useLocation } from "react-router-dom";
 import { IoMdMenu } from "react-icons/io";
 import { IoCloseSharp } from "react-icons/io5";
-
+import header from "../assets/header1.png";
 const navbarDetails = [
 	{ title: "Home", path: "#home" },
 	{ title: "About", path: "#about" },
-	{ title: "Services", path: "#services" },
 	{ title: "Projects", path: "#projects" },
 	{ title: "Contact", path: "#contact" },
 ];
@@ -86,16 +85,22 @@ function Navbar() {
 	
 	return (
 		<>
-			<div>
-				<ul className="md:flex hidden gap-x-8 h-full items-center justify-start mr-4 ">
+			<div className="w-full flex justify-between bg-white ">
+				<div className="w-80 h-20  ml-8 flex items-center justify-center gap-x-4">
+					<div className="w-16 h-16 rounded-full bg-violet-300">
+						<img src={header} alt="" className="w-full h-full rounded-full" />
+					</div>
+					<p>Dhanushka Basnayaka</p>
+				</div>
+				<ul className="md:flex hidden gap-x-12   h-20 items-center justify-start mr-4 ">
 					{navbarDetails.map((item, index) => (
 						<li key={index} className="py-4 text flex items-center justify-center">
 							<a
 								href={item.path}
-								className={`${
+								className={` font-semibold uppercase ${
 									activeSection === item.path
-										? "border-b-2 border-blue-500"
-										: "hover:border-b-2 dark:border-blue-500 text-center active:border-blue-500 border-[#000814] flex justify-center items-center"
+										? "border-b-2 border-violet-600 "
+										: "hover:border-b-2 dark:border-violet-600 text-center active:border-blue-500 border-[#000814] flex justify-center items-center"
 								}`}
 							>
 								{item.title}
