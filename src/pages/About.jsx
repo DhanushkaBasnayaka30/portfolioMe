@@ -5,28 +5,28 @@ function About() {
 	const [state, setState] = useState("skill");
 	return (
 		<div className="w-full h-full  flex flex-col">
-			<div className="text-center items-center justify-center flex flex-col">
-				<h1 className="text-4xl uppercase font-semibold">about me</h1>
+			<div className="text-center items-center justify-center flex flex-col ">
+				<h1 className="text-2xl lg:text-4xl uppercase font-semibold">about me</h1>
 				<div className="border-2 w-12 mt-2 border-purple-500"></div>
 			</div>
-			<div className=" w-[90%] mx-auto h-full flex p-6">
-				<div className="w-1/2  h-full  p-2">
-					<div className="w-full flex h-[400px] ">
-						<div className="w-[300px] h-[400px] flex items-center justify-center rounded-md px-2">
+			<div className=" w-[90%] mx-auto h-full flex-col lg:flex-row flex lg:p-6 mt-8">
+				<div className="lg:w-1/2 w-full  h-full  lg:p-2 ">
+					<div className="w-full lg:flex-row flex-col flex lg:h-[400px] ">
+						<div className="lg:w-[300px] w-full h-[450px] lg:h-[400px] flex items-center justify-center rounded lg:px-2 ">
 							<img
-								className="w-full h-full bg-cover overflow-hidden rounded-md"
+								className="w-full h-full bg-cover overflow-hidden rounded"
 								src={about}
-								alt=""
+								alt="about image"
 							/>
 						</div>
 
-						<div className="w-[540px] py-2 px-4 flex flex-col ">
-							<div className="w-full h-full  p-1 gap-y-4 flex flex-col">
+						<div className="lg:w-[540px] w-full py-2 lg:px-4 flex flex-col ">
+							<div className="w-full h-full lg:text-base text-sm p-1 gap-y-3 flex flex-col ">
 								<div className="flex gap-x-3 ">
 									<p>Name :</p>
 									<p>Dhanushka Basnayaka</p>
 								</div>
-								<div className="flex gap-x-3">
+								<div className="flex gap-x-3 text-wrap  flex-wrap">
 									<p>Email :</p>
 									<p>dhanushkabasnayaka99@gmail.com</p>
 								</div>
@@ -37,9 +37,9 @@ function About() {
 							</div>
 						</div>
 					</div>
-					<div className="w-full h-[360px] text-gray-600 text-justify p-4 mt-4">
-						<h1 className="text-2xl font-semibold ">Get to know me!</h1>
-						<p className="mt-6 text-base text-justify">
+					<div className="w-full lg:h-[360px] text-gray-600 text-justify p-4 mt-4 ">
+						<h1 className="text-xl lg:text-2xl font-semibold ">Get to know me!</h1>
+						<p className="mt-6  text-sm lg:text-base text-justify">
 							Hi, I’m Dhanushka Basnayaka, a passionate and dedicated Full-Stack
 							Developer currently pursuing my degree in Computer Science at the
 							University of Jaffna. I specialize in building dynamic and
@@ -47,7 +47,7 @@ function About() {
 							experiences for both users and clients.
 						</p>
 
-						<p>
+						<p className="text-sm lg:text-base">
 							I’m also an avid learner who enjoys sharing insights and
 							experiences from my web development journey. Through platforms
 							like LinkedIn and Instagram, I regularly post content that
@@ -57,18 +57,18 @@ function About() {
 							who is passionate, skilled, and eager to make an impact, don’t
 							hesitate to get in touch.
 						</p>
-						<button className="bg-purple-500 px-12 py-2 uppercase mt-4 rounded-md text-white font-semibold">
+						<button className="bg-purple-500 lg:px-12 lg:py-2 text-xs px-6 py-2 uppercase mt-4 rounded text-white font-semibold">
 							ContactME
 						</button>
 					</div>
 				</div>
-				<div className="w-1/2  h-full p-2">
-					<div className=" w-full flex gap-x-2 ">
+				<div className="lg:w-1/2 w-full h-full p-2 ">
+					<div className=" w-full flex gap-x-2  items-center justify-start p-1">
 						<button
 							className={`${
 								state === "skill"
-									? " border border-black text-gray-800 uppercase px-12 py-1  "
-									: " border-gray-500 text-gray-500 uppercase px-12 py-1 border opacity-65"
+									? " border border-black text-gray-800 uppercase text-xs px-4 py-1 lg:text-base lg:px-12 lg:py-1  "
+									: " border-gray-500 text-gray-500 uppercase  border opacity-65 text-xs px-4 py-1 lg:text-base lg:px-12 lg:py-1  "
 							}`}
 							onClick={() => {
 								setState("skill");
@@ -78,8 +78,8 @@ function About() {
 						<button
 							className={`${
 								state === "exp"
-									? " border border-black text-gray-800 uppercase px-12 py-1  "
-									: " border-gray-500 border px-12 py-1 uppercase text-gray-500 opacity-65"
+									? " border border-black text-gray-800 uppercase text-xs px-4 py-1 lg:text-base lg:px-12 lg:py-1   "
+									: " border-gray-500 border  uppercase text-gray-500 opacity-65 text-xs px-4 py-1 lg:text-base lg:px-12 lg:py-1  "
 							}`}
 							onClick={() => {
 								setState("exp");
@@ -89,43 +89,45 @@ function About() {
 					</div>
 					{state === "skill" ? (
 						<div className="w-full h-full  p-2">
-							<p className="capitalize text-2xl mt-8 text-gray-700 font-semibold">my skill</p>
+							<p className="capitalize text-xl lg:text-2xl mt-8 text-gray-700 font-semibold">my skill</p>
 
-							<div className="w-full h-full flex mt-12  gap-4 flex-wrap ">
+							<div className="w-full h-full flex mt-12  gap-4 flex-wrap text-sm lg:text-base">
 								<div>
-									<p className="text-gray-800 w-auto h-auto text-lg rounded px-5 py-1 bg-gray-300">
+									<p className="text-gray-800 w-auto h-auto  rounded-sm px-5 py-1 bg-gray-300">
 										HTML
 									</p>
 								</div>
 								<div>
-									<p className="text-gray-800 w-auto h-auto text-lg rounded px-5 py-1 bg-gray-300">
+									<p className="text-gray-800 w-auto h-auto  rounded-sm px-5 py-1 bg-gray-300">
 										CSS
 									</p>
 								</div>
 								<div>
-									<p className="text-gray-800 w-auto h-auto text-lg rounded px-5 py-1 bg-gray-300">
+									<p className="text-gray-800 w-auto h-auto  rounded-sm px-5 py-1 bg-gray-300">
 										Taiwind
 									</p>
 								</div>
 								<div>
-									<p className="text-gray-800 w-auto h-auto text-lg rounded px-5 py-1 bg-gray-300">
+									<p className="text-gray-800 w-auto h-auto  rounded-sm px-5 py-1 bg-gray-300">
 										REACT
 									</p>
 								</div>
 								<div>
-									<p className="text-gray-800 w-auto h-auto text-lg rounded px-5 py-1 bg-gray-300">
+									<p className="text-gray-800 w-auto h-auto  rounded-sm px-5 py-1 bg-gray-300">
 										Node js
 									</p>
 								</div>
 								<div>
-									<p className="text-gray-800 w-auto h-auto text-lg rounded px-5 py-1 bg-gray-300">
-										SQl
+									<p className="text-gray-800 w-auto h-auto  rounded-sm px-5 py-1 bg-gray-300">
+										My Sql
 									</p>
 								</div>
 							</div>
 						</div>
 					) : (
-						<div className="w-full h-full bg-purple-900"></div>
+						<div className="w-full h-[300px] bg-gray-200 flex items-center justify-center">
+							<p>comming soon</p>
+						</div>
 					)}
 				</div>
 			</div>

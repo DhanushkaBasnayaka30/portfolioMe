@@ -6,38 +6,33 @@ import Projects from "./Projects";
 import Contact from "./Contact";
 import Footer from "../components/Footer";
 
-
 function MainPage() {
 	return (
 		<>
-				<div className="w-full fixed top-0 z-50 h-20  flex items-center justify-end  ">
-						<Navbar />
-						</div>
+			<div className="w-full fixed top-0 z-50 h-20  flex items-center lg:justify-end  ">
+				<Navbar />
+			</div>
 
-			<div className="w-full   absolute z-0 top-20 h-screen-minus-20">
+			<div className="w-full   absolute z-0 top-20 min-h-h-screen-minus-20 max-h-auto">
 				<section className="w-full   h-screen-minus-20   relative " id="home">
 					<Home />
 				</section>
 				<section
-					className="w-full   h-screen-minus-20  "
+					className="w-full  min-h-h-screen-minus-20 max-h-auto "
 					id="about">
-						<About/>
-					</section>
-				<section
-					className="w-full h-auto mt-20 relative  "
-					id="projects">
-						<Projects/>
-					</section>
+					<About />
+				</section>
+				<section className="w-full  min-h-h-screen-minus-20 max-h-auto mt-20 relative  " id="projects">
+					<Projects />
+				</section>
 
-				<section
-					className="w-full h-screen-minus-20  relative"
-					id="contact">
-						<Contact/>
-					</section>
-				
-			<div className=" ">
-				<Footer/>
-			</div>
+				<section className="w-full min-h-h-screen-minus-20 max-h-auto relative " id="contact">
+					<Contact />
+				</section>
+
+				<div className="mt-20 ">
+					<Footer />
+				</div>
 			</div>
 		</>
 	);
