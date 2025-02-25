@@ -29,7 +29,7 @@ export const ContactUs = () => {
 			<div className="w-full flex flex-col justify-center gap-y-2 text-sm lg:text-base">
 				<label>Name</label>
 				<input
-					className="lg:w-[90%] float-start flex h-16 pl-2 gap-y-2 outline-none"
+					className="lg:w-[90%] rounded bg-gray-200 float-start flex h-16 pl-2 gap-y-2 outline-none"
 					placeholder="jonny max"
 					type="text"
 					name="user_name"
@@ -38,7 +38,7 @@ export const ContactUs = () => {
 			<div className="w-full flex flex-col justify-center gap-y-2">
 				<label>Email</label>
 				<input
-					className="lg:w-[90%] float-start  flex h-16 pl-2 outline-none"
+					className="lg:w-[90%]  rounded bg-gray-200 flex h-16 pl-2 outline-none"
 					type="email"
 					name="user_email"
           placeholder="jonnymax@gmail.com"
@@ -47,7 +47,7 @@ export const ContactUs = () => {
 			<div className="w-full flex flex-col justify-center gap-y-2">
 				<label>Message</label>
 				<textarea
-					className="lg:w-[90%] float-start flex text-sm lg:text-base h-20 lg:h-40 pl-2 outline-none"
+					className="lg:w-[90%] pt-2 rounded bg-gray-200 flex text-sm lg:text-base h-20 lg:h-40 pl-2 outline-none"
 					name="message"
           placeholder="Enter your message"
 				/>

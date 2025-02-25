@@ -9,7 +9,7 @@ import Footer from "../components/Footer";
 function MainPage() {
 	return (
 		<>
-			<div className="w-full fixed top-0 z-50 h-20  flex items-center lg:justify-end  ">
+			<div className="w-full fixed top-0 lg:top-0 z-50 h-20  flex items-center lg:justify-end  ">
 				<Navbar />
 			</div>
 
