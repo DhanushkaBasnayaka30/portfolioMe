@@ -3,7 +3,7 @@
     "public": "dist",
     "ignore": [
       "firebase.json",
-      "**/.*",
+      ".firebase/**",
       "**/node_modules/**"
     ],
     "rewrites": [
@@ -12,6 +12,6 @@
         "destination": "/index.html"
       }
     ],
-    "predeploy":["npm run build"]
+    "predeploy": ["npm run build"]
   }
 }

@@ -1,9 +1,9 @@
 import { IoIosArrowForward } from "react-icons/io";
 import { IoIosArrowBack } from "react-icons/io";
-import image from "../assets/image.png";
+
 import ProjectsList from "../../constant/ProjectsList";
 import { useState } from "react";
-import { IoMdClose } from "react-icons/io";
+
 function Projects() {
 
 	const [selectedCategory, setSelectedCategory] = useState("web");
@@ -39,7 +39,7 @@ function Projects() {
 	);
 	return (
 		<>
-		
+
 			<div className="mt-20 w-full h-full lg:p-2  ">
 
 				<div className="w-full flex items-center justify-center flex-col ">
@@ -70,9 +70,9 @@ function Projects() {
 
 
 									<img
-										src={`/src/assets/projects/${project.image[imageIndexes[index]]}`}
+										src={project.image[imageIndexes[index]]}
 
-										alt=""
+										alt={project.image[imageIndexes[index]]}
 										className="bg-cover bg-center w-full h-full"
 									/>
 
