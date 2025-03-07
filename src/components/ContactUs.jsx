@@ -1,21 +1,25 @@
 import React, { useRef } from "react";
 import emailjs from "@emailjs/browser";
+import { toast } from "react-toastify";
 
 export const ContactUs = () => {
+	const emailJsKey = import.meta.env.VITE_EMAILJS_KEY;
 	const form = useRef();
 
 	const sendEmail = (e) => {
 		e.preventDefault();
 
 		emailjs
-			.sendForm("YOUR_SERVICE_ID", "YOUR_TEMPLATE_ID", form.current, {
-				publicKey: "YOUR_PUBLIC_KEY",
+			.sendForm("service_aesyacd", "template_w4sdgbg", form.current, {
+				publicKey: emailJsKey,
 			})
 			.then(
 				() => {
 					console.log("SUCCESS!");
+					form.current.reset(); // Reset form fields
 				},
 				(error) => {
+					toast.error(error.text)
 					console.log("FAILED...", error.text);
 				}
 			);
@@ -32,7 +36,7 @@ export const ContactUs = () => {
 					className="lg:w-[90%] rounded bg-gray-200 float-start flex h-16 pl-2 gap-y-2 outline-none"
 					placeholder="jonny max"
 					type="text"
-					name="user_name"
+					name="from_name"
 				/>
 			</div>
 			<div className="w-full flex flex-col justify-center gap-y-2">
@@ -40,7 +44,7 @@ export const ContactUs = () => {
 				<input
 					className="lg:w-[90%]  rounded bg-gray-200 flex h-16 pl-2 outline-none"
 					type="email"
-					name="user_email"
+					name="from_email"
           placeholder="jonnymax@gmail.com"
 				/>
 			</div>
@@ -53,7 +57,7 @@ export const ContactUs = () => {
 				/>
 			</div>
 			<div className=" h-20 w-full cursor-pointer flex items-center justify-start ">
-				<input className="px-12 text-center font-semibold text-white py-1 lg:py-2 bg-purple-500 rounded" type="submit" value="Send" />
+				<input className="px-12 text-center font-semibold cursor-pointer text-white py-1 lg:py-2 bg-purple-500 rounded" type="submit" value="Send" />
 			</div>
 		</form>
 	);

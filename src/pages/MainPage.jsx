@@ -5,10 +5,12 @@ import About from "./About";
 import Projects from "./Projects";
 import Contact from "./Contact";
 import Footer from "../components/Footer";
+import { ToastContainer } from "react-toastify";
 
 function MainPage() {
 	return (
 		<>
+		<ToastContainer />
 			<div className="w-full fixed top-0 lg:top-0 z-50 h-20  flex items-center lg:justify-end  ">
 				<Navbar />
 			</div>

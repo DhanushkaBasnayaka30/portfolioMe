@@ -57,7 +57,7 @@ function About() {
 							who is passionate, skilled, and eager to make an impact, don’t
 							hesitate to get in touch.
 						</p>
-						<button className="bg-purple-500 lg:px-12 lg:py-2 text-xs px-6 py-2 uppercase mt-4 rounded text-white font-semibold">
+						<button className="bg-purple-500 lg:px-12 lg:py-3 text-xs px-6 py-2 uppercase mt-4 rounded text-white font-semibold text-[16px]">
 							ContactME
 						</button>
 					</div>
