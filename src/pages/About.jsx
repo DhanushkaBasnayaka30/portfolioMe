@@ -1,6 +1,7 @@
 import { useState } from "react";
 import about from "../assets/about.jpg";
 import about1 from "../assets/about2.png";
+import { toast } from "react-toastify";
 function About() {
 	const [state, setState] = useState("skill");
 	return (
@@ -57,30 +58,31 @@ function About() {
 							who is passionate, skilled, and eager to make an impact, don’t
 							hesitate to get in touch.
 						</p>
-						<button className="bg-purple-500 lg:px-12 lg:py-3 text-xs px-6 py-2 uppercase mt-4 rounded text-white font-semibold text-[16px]">
-							ContactME
-						</button>
+						<a href="#contact">
+
+							<button  className="bg-purple-500 lg:px-12 lg:py-3 text-xs px-6 py-2 uppercase mt-4 rounded text-white font-semibold text-[18px]">
+								Contact Me
+							</button>
+						</a>
 					</div>
 				</div>
 				<div className="lg:w-1/2 w-full h-full p-2 ">
 					<div className=" w-full flex gap-x-2  items-center justify-start p-1">
 						<button
-							className={`${
-								state === "skill"
+							className={`${state === "skill"
 									? " border border-black text-gray-800 uppercase text-xs px-4 py-1 lg:text-base lg:px-12 lg:py-1  "
 									: " border-gray-500 text-gray-500 uppercase  border opacity-65 text-xs px-4 py-1 lg:text-base lg:px-12 lg:py-1  "
-							}`}
+								}`}
 							onClick={() => {
 								setState("skill");
 							}}>
 							skill
 						</button>
 						<button
-							className={`${
-								state === "exp"
+							className={`${state === "exp"
 									? " border border-black text-gray-800 uppercase text-xs px-4 py-1 lg:text-base lg:px-12 lg:py-1   "
 									: " border-gray-500 border  uppercase text-gray-500 opacity-65 text-xs px-4 py-1 lg:text-base lg:px-12 lg:py-1  "
-							}`}
+								}`}
 							onClick={() => {
 								setState("exp");
 							}}>
@@ -89,7 +91,7 @@ function About() {
 					</div>
 					{state === "skill" ? (
 						<div className="w-full h-full  p-2">
-							<p className="capitalize text-xl lg:text-2xl mt-8 text-gray-700 font-semibold">my skill</p>
+							<p className="capitalize text-xl lg:text-2xl mt-8 text-gray-700 font-semibold">my skills</p>
 
 							<div className="w-full h-full flex mt-12  gap-4 flex-wrap text-sm lg:text-base">
 								<div>

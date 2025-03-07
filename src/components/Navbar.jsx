@@ -106,11 +106,10 @@ function Navbar() {
 							className="py-4 text flex items-center justify-center">
 							<a
 								href={item.path}
-								className={` font-semibold uppercase ${
-									activeSection === item.path
-										? "border-b-2 border-violet-600 "
-										: "hover:border-b-2 dark:border-violet-600 text-center active:border-blue-500 border-[#000814] flex justify-center items-center"
-								}`}>
+								className={` font-semibold uppercase ${activeSection === item.path
+									? "border-b-2 border-violet-600 "
+									: "hover:border-b-2 dark:border-violet-600 text-center active:border-blue-500 border-[#000814] flex justify-center items-center"
+									}`}>
 								{item.title}
 							</a>
 						</li>
@@ -136,31 +135,32 @@ function Navbar() {
 			</div>
 			<div
 				ref={divRef}
-				className={`md:hidden flex w-full h-[40vh]  bg-gray-100 text-gray-800 absolute  transition-transform duration-700 ${
-					menubuttonState
-						? "top-20 translate-x-0 "
-						: "top-20 translate-x-[100vw]"
-				}`}>
-				
-				<div className="w-full h-full bg-transparent absolute  ">
-					<ul className="flex flex-col items-end justify-center h-full  pr-8 ">
-						{navbarDetails.map((item, index) => (
-							<li
-								key={index}
-								className="py-4 text flex items-center justify-center">
-								<a
-									href={item.path}
-									onClick={() => changeState(false)} // Close the menu after clicking an item
-									className={`${
-										activeSection === item.path
+				className={`sm:hidden flex w-3/4 right-0 h-screen bg-slate-300    text-gray-800 absolute  transition-transform duration-700 ${menubuttonState
+					? "top-20 translate-x-0 "
+					: "top-20 translate-x-[100vw]"
+					}`}>
+
+				<div className="w-full  h-[30vh] flex bg-transparent absolute   ">
+					<div className="w-1/4 "></div>
+					<div className="w-3/4  ">
+						<ul className="flex flex-col items-end justify-center h-full  pr-8 ">
+							{navbarDetails.map((item, index) => (
+								<li
+									key={index}
+									className="py-4 text flex items-center justify-center">
+									<a
+										href={item.path}
+										onClick={() => changeState(false)} // Close the menu after clicking an item
+										className={`${activeSection === item.path
 											? "border-b-2 border-blue-500 text-gray-900 "
-											: "hover:border-b-2 dark:border-blue-500 text-center active:border-blue-500 border-[#000814] flex justify-center items-center text-gray-600"
-									}`}>
-									{item.title}
-								</a>
-							</li>
-						))}
-					</ul>
+											: "hover:border-b-2 dark:border-blue-500 text-center active:border-blue-500  border-[#000814] flex justify-center items-center text-gray-600"
+											}`}>
+										{item.title}
+									</a>
+								</li>
+							))}
+						</ul>
+					</div>
 				</div>
 			</div>
 		</>

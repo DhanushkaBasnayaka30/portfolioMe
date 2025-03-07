@@ -13,7 +13,7 @@ function Home() {
 			{/* socail icon section */}
 			<div className="w-full h-full relative">
 				<div className="w-24 h-20 hover:h-auto pt-8 absolute bottom-[35%] tras left-0  flex flex-col z-10 items-center justify-end ">
-				
+
 					<div className="lg:flex hidden">
 						<div className="border  rounded-md p-2 flex flex-col gap-y-8">
 							<FaFacebookF className="w-10 h-10 hover:bg-purple-300 p-2 rounded-md cursor-pointer " />
@@ -37,13 +37,16 @@ function Home() {
 							Web Applications that leads to the success of the overall product{" "}
 						</span>
 						<div className="  w-full items-center justify-center flex  gap-x-4">
-						<button className="mt-12 w-auto bg-purple-500 lg:px-20 rounded text-white text-center lg:text-lg text-base px-8  py-1 lg:py-2 text hover:bg-white hover:border-purple-500 hover:text-purple-500 border uppercase">
-							Resume
-						</button>
-						<button className="mt-12 w-auto bg-white text-purple-500 border  lg:px-20 rounded border-purple-500 text-center lg:text-lg text-base px-8  py-1 lg:py-2 text uppercase">
-							Projects
-						</button>
-							
+							<button className="mt-12 w-auto bg-purple-500 lg:px-20 rounded text-white text-center lg:text-lg text-base px-8  py-1 lg:py-2 text hover:bg-white hover:border-purple-500 hover:text-purple-500 border uppercase">
+								Resume
+							</button>
+							<a href="#projects">
+
+								<button className="mt-12 w-auto bg-white text-purple-500 border  lg:px-20 rounded border-purple-500 text-center lg:text-lg text-base px-8  py-1 lg:py-2 text uppercase">
+									Projects
+								</button>
+							</a>
+
 						</div>
 					</div>
 				</div>
