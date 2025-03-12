@@ -1,125 +1,118 @@
-import { IoIosArrowForward } from "react-icons/io";
-import { IoIosArrowBack } from "react-icons/io";
-
+import { useState, useEffect } from "react";
+import { FaArrowAltCircleLeft, FaArrowAltCircleRight } from "react-icons/fa";
+import { useNavigate } from "react-router-dom";
 import ProjectsList from "../../constant/ProjectsList";
-import { useState } from "react";
 
 function Projects() {
+  const [currentIndex, setCurrentIndex] = useState(0);
+  const navigate = useNavigate();
+  const [itemsPerPage, setItemsPerPage] = useState(2); // Default for large screens
 
-	const [selectedCategory, setSelectedCategory] = useState("web");
-	console.log(selectedCategory);
-	const [imageIndexes, setImageIndexes] = useState(
-		ProjectsList.reduce((acc, project, index) => {
-			acc[index] = 0; // Initialize each project with first image
-			return acc;
-		}, {})
-	);
-	// Function to handle next image for a specific project
-	const nextImage = (projectIndex, imageArrayLength) => {
-		setImageIndexes((prevIndexes) => ({
-			...prevIndexes,
-			[projectIndex]: (prevIndexes[projectIndex] + 1) % imageArrayLength, // Loop to first image
-		}));
-	};
+  // Update itemsPerPage based on screen size
+  useEffect(() => {
+    const handleResize = () => {
+      if (window.innerWidth < 640) {
+        setItemsPerPage(1);
+      } else if (window.innerWidth < 1024) {
+        setItemsPerPage(2);
+      } else {
+        setItemsPerPage(3);
+      }
+    };
 
-	// Function to handle previous image for a specific project
-	const prevImage = (projectIndex, imageArrayLength) => {
-		setImageIndexes((prevIndexes) => ({
-			...prevIndexes,
-			[projectIndex]:
-				prevIndexes[projectIndex] === 0
-					? imageArrayLength - 1
-					: prevIndexes[projectIndex] - 1,
-		}));
-	};
+    handleResize(); // Set on load
+    window.addEventListener("resize", handleResize); // Listen for changes
 
-	// Filter projects based on selected category
-	const filteredProjects = ProjectsList.filter(
-		(project) => project.category === selectedCategory
-	);
-	return (
-		<>
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
 
-			<div className="mt-20 w-full h-full lg:p-2  ">
+  // Handle Next Slide
+  const nextSlide = () => {
+    if (currentIndex + itemsPerPage < ProjectsList.length) {
+      setCurrentIndex((prev) => prev + 1);
+    }
+  };
 
-				<div className="w-full flex items-center justify-center flex-col ">
-					<p className=" text-2xl lg:text-4xl  uppercase font-semibold">
-						Projects
-					</p>
-					<div className="border-2 w-12 mt-2 border-purple-500"></div>
-				</div>
-				<div className="w-full lg:w-[75%] mx-auto  h-full lg:p-6 lg:p-1  mt-5">
-					<div className="w-full  h-12 flex items-center">
-						<form action="" className="lg:ml-2 ml-2 mb-4">
-							<select
-								onChange={(e) => setSelectedCategory(e.target.value)}
-								value={selectedCategory} // Set default category in UI
-								className="h-10 px-2 text-xs lg:text-base rounded uppercase text-gray-800 border border-purple-500 font-semibold"
-							>
-								<option value="web">Web Development</option>
-								<option value="mobile">Mobile Development</option>
-							</select>
-						</form>
-					</div>
-					{/* =================================== */}
-					{filteredProjects.map((project, index) => (
+  // Handle Previous Slide
+  const prevSlide = () => {
+    if (currentIndex > 0) {
+      setCurrentIndex((prev) => prev - 1);
+    }
+  };
 
-						<div key={index} className="w-full  lg:h-[400px] h-auto mt-8 lg:flex-row flex-col flex bg-gray-200 lg:p-1 p-3">
-							<div className=" w-full lg:w-1/2 h-full  flex flex-col gap-y-4">
-								<div className="w-full lg:h-4/5 h-[210px] sm:h-[350px] ">
+  return (
+    <div className="w-full min-h-screen flex flex-col items-center pt-12">
+      <p className="text-2xl lg:text-4xl uppercase font-semibold text-blue-800">
+        Projects
+      </p>
+      <div className="border-2 w-12 mt-2 border-[#1a0505]"></div>
 
+      <div className="relative w-[94%] bg-gray-200 mx-auto mt-12 p-6 overflow-hidden">
+        {/* Previous Button */}
+        <button
+          onClick={prevSlide}
+          className={`absolute left-0 top-1/2 -translate-y-1/2 z-10 text-blue-800 ${
+            currentIndex === 0 ? "opacity-0" : "opacity-100"
+          } transition-opacity duration-300`}
+          disabled={currentIndex === 0}
+        >
+          <FaArrowAltCircleLeft size={40} />
+        </button>
 
-									<img
-										src={project.image[imageIndexes[index]]}
+        {/* Slider Container */}
+        <div className="w-full overflow-hidden">
+          <div
+            className="flex gap-6 transition-transform duration-500 ease-in-out"
+            style={{ transform: `translateX(-${currentIndex * 100}%)` }}
+          >
+            {ProjectsList.map((project, index) => (
+              <div
+                key={index}
+                className="w-full sm:w-[320px] md:w-[450px] lg:w-[600px] h-[500px] bg-white border-2 border-blue-800 rounded-lg p-4 flex-shrink-0"
+              >
+                <div className="w-full h-[320px]">
+                  <img
+                    src={project.font_image}
+                    alt={project.title}
+                    className="w-full h-full object-cover rounded-md"
+                  />
+                </div>
+                <p className="text-lg text-blue-800 uppercase font-bold mt-2">
+                  {project.title}
+                </p>
+                <div className="flex gap-x-2 mt-1">
+                  <span className="text-lg font-bold">Tech Stack:</span>
+                  <span className="text-lg">{project.stack}</span>
+                </div>
+                <div
+                  className="flex items-center cursor-pointer mt-2 gap-x-2"
+                  onClick={() => navigate(`/project/${project.id}`)}
+                >
+                  <p className="text-blue-800 text-xl">More</p>
+                  <FaArrowAltCircleRight size={20} className="text-blue-800" />
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
 
-										alt={project.image[imageIndexes[index]]}
-										className="bg-cover bg-center w-full h-full"
-									/>
+        {/* Next Button */}
+        <button
+          onClick={nextSlide}
+          className={`absolute right-0 top-1/2 -translate-y-1/2 text-blue-800 ${
+            currentIndex >= ProjectsList.length - itemsPerPage
+              ? "opacity-0"
+              : "opacity-100"
+          } transition-opacity duration-300`}
+          disabled={currentIndex >= ProjectsList.length - itemsPerPage}
+        >
+          <FaArrowAltCircleRight size={40} />
+        </button>
+      </div>
 
-								</div>
-								<div className="w-full h-1/5  flex items-center justify-end lg:justify-center  gap-x-4 ">
-									<div onClick={() => prevImage(index, project.image.length)} className="bg-gray-200 cursor-pointer border border-purple-500 rounded p-1">
-										<IoIosArrowBack className="text-xl lg:text-2xl " />
-									</div>
-									<div onClick={() => nextImage(index, project.image.length)} className="bg-gray-200 border border-purple-500  cursor-pointer rounded p-1">
-										<IoIosArrowForward className="text-xl lg:text-2xl " />
-									</div>
-								</div>
-							</div>
-							<div className="lg:w-1/2 w-full h-full ">
-								<div className="lg:w-[80%] h-[90%] w-[100%] mt-2 mx-auto ">
-									<h1 className="lg:text-2xl uppercase font-medium text-lg">
-										{project.title}
-									</h1>
-									<p className="text-sm lg:text-base mt-4 text-justify">
-										{project.description}
-									</p>
-									<div className="mt-4 flex w-full flex-wrap ">
-										<p>website link - </p>
-										<a
-											className="text-purple-700 text-sm lg:text-base"
-											href={project.projects_link}>
-											{project.projects_link}
-										</a>
-										<p>GitHub Repo - </p>
-										<a
-											className="text-purple-700 text-sm lg:text-base"
-											href={project.github_link}>
-											{project.github_link}
-										</a>
-									</div>
-								</div>
-							</div>
-						</div>
-					))}
-
-				</div>
-
-				<div className="mb-24"></div>
-
-			</div>
-		</>
-	);
+      <div className="mb-24"></div>
+    </div>
+  );
 }
 
 export default Projects;

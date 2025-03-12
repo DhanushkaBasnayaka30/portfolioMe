@@ -1,6 +1,6 @@
 import { useState } from "react";
-import about from "../assets/about.jpg";
-import about1 from "../assets/about2.png";
+import about from "../assets/about.png";
+import about1 from "../assets/about.png";
 import { toast } from "react-toastify";
 function About() {
 	const [state, setState] = useState("skill");
@@ -10,12 +10,18 @@ function About() {
 				<h1 className="text-2xl lg:text-4xl uppercase font-semibold">about me</h1>
 				<div className="border-2 w-12 mt-2 border-purple-500"></div>
 			</div>
+			<div className="w-[90%] mx-auto h-80 border-2 border-black flex p-2">
+				<div className="w-2/5 h-full border border-black"></div>
+				<div className="w-1/5 h-full border border-black"></div>
+				<div className="w-2/5 h-full border border-black"></div>
+			</div>
 			<div className=" w-[90%] mx-auto h-full flex-col lg:flex-row flex lg:p-6 mt-8">
 				<div className="lg:w-1/2 w-full  h-full  lg:p-2 ">
 					<div className="w-full lg:flex-row flex-col flex lg:h-[400px] ">
-						<div className="lg:w-[300px] w- p-2 h-[480px] lg:h-[400px] flex items-center justify-center rounded lg:px-2 ">
+						<div className="lg:w-[380px] px-8 h-[450px] lg:h-[400px] flex items-center justify-center  lg:px-2 relative overflow-hidden ">
+							<div className="w-[330px] h-[330px] shadow-2xl  shadow-purple-300   rounded-full absolute bg-purple-500 bottom-12 z-[-10]"></div>
 							<img
-								className="w-full h-full bg-cover overflow-hidden rounded"
+								className="w-full h-full   bg-cover overflow-hidden rounded"
 								src={about}
 								alt="about image"
 							/>
