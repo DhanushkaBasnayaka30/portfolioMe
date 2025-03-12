@@ -47,9 +47,9 @@ export default function Project() {
   }
 
   return (
-    <div className="bg-black h-screen w-full  p-3 overflow-hidden ">
-      <div className="w-[99%] h-[99%] bg-white mx-auto rounded-md lg:overflow-hidden overflow-y-scroll relative ">
-        <div className="w-full h-24 fixed z-50 bg-blue-800 flex items-center justify-start pl-2">
+    <div className="bg-black h-screen w-full  p-3  ">
+      <div className="w-[99%] h-[99%] bg-white mx-auto rounded-md  sm:overflow-y-scroll relative ">
+        <div className=" mx-auto  h-24  bg-blue-800 flex items-center justify-start  ">
 
           <IoArrowBackCircleOutline
             onClick={() => navigate("/#projects")}
@@ -61,21 +61,16 @@ export default function Project() {
         </div>
 
         <div className="w-[90%]  h-auto  absolute top-24 left-[5%] ">
-          <div className="w-full lg:h-[700px] h-auto  mt-4 lg:flex-row flex-col flex bg-gray-200 lg:p-4 p-1">
-            <div className="w-full lg:w-1/2 h-full flex flex-col gap-y-4">
+          <div className="w-full lg:h-[700px] h-auto  mt-4 lg:flex-col flex-col flex bg-gray-100 lg:p-4 p-1">
+            <div className="w-full lg:w-[90%] mx-auto h-full flex flex-col gap-y-4">
 
-              <div className="w-full lg:h-4/5 h-[210px] sm:h-[350px]">
-              
+              <div className="w-full lg:h-4/5 h-[210px] sm:h-[350px] flex ">
                 {/* Image Carousel */}
-
                 <img
                   src={selectedProject["image"][imageIndexes[selectedProject.id]]}
                   alt={`${selectedProject["image"][imageIndexes[selectedProject.id]]}`}
-                  className="w-full h-full object-cover rounded-md"
+                  className="w-full h-full object-contain  bg-center rounded-md"
                 />
-
-
-
               </div>
               <div className="w-full h-1/5 flex items-center justify-end lg:justify-center gap-x-4">
                 <div
@@ -92,23 +87,33 @@ export default function Project() {
                 </div>
               </div>
             </div>
-            <div className="lg:w-1/2 w-full h-full">
+            <div className="lg:w-[80%] mx-auto  w-full h-full pb-12">
               <div className="lg:w-[80%] h-[90%] w-[100%] mt-2 mx-auto">
-                <h1 className="lg:text-2xl uppercase font-medium text-lg">
+                <h1 className="lg:text-2xl uppercase font-medium text-lg text-blue-800  md:text-center">
                   {selectedProject.title}
                 </h1>
                 <p className="text-sm lg:text-base mt-4 text-justify">
                   {selectedProject.description}
                 </p>
-                <div className="mt-4 flex w-full flex-wrap">
-                  <p>Website Link - </p>
-                  <a className="text-purple-700 text-sm lg:text-base" href={selectedProject.projects_link}>
-                    {selectedProject.projects_link}
-                  </a>
-                  <p>GitHub Repo - </p>
-                  <a className="text-purple-700 text-sm lg:text-base" href={selectedProject.github_link}>
-                    {selectedProject.github_link}
-                  </a>
+                <div className=" flex gap-x-2 mt-4">
+                  <p className="font-semibold">Teck stack:</p>
+                  {selectedProject.stack.map((item, index) => (
+                    <p className="text-blue-800 flex" key={index}>{item}, </p>
+                  ))}
+                </div>
+                <div className="mt-4 flex w-full   flex-row gap-x-2">
+                  <div className=" w-1/2">
+                    <p>Website Link - </p>
+                    <a className="text-purple-700 text-sm lg:text-base" href={selectedProject.projects_link}>
+                      {selectedProject.projects_link}
+                    </a>
+                  </div>
+                  <div className=" w-1/2">
+                    <p>GitHub Repo - </p>
+                    <a className="text-purple-700 text-sm lg:text-base" href={selectedProject.github_link}>
+                      {selectedProject.github_link}
+                    </a>
+                  </div>
                 </div>
               </div>
             </div>

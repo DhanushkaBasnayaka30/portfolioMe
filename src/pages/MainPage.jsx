@@ -6,6 +6,7 @@ import Projects from "./Projects";
 import Contact from "./Contact";
 import Footer from "../components/Footer";
 import { ToastContainer } from "react-toastify";
+import PageLocation from "../components/PageLocation";
 
 function MainPage() {
 
@@ -55,21 +56,22 @@ function MainPage() {
 			<div className="w-full fixed top-0 lg:top-16 z-50 h-20  flex items-center lg:justify-end  ">
 				<Navbar />
 			</div>
+		
 
 			<div className="w-full h-screen max-h-auto ">
-				<section className="w-full section  h-screen-minus-20  relative " id="home">
+				<section className="w-full section  h-screen  relative " id="home">
 					<Home />
 				</section>
-				{/* <section
-					className="w-full  min-h-h-screen-minus-20 max-h-auto "
+				<section
+					className="w-full  h-screen section "
 					id="about">
 					<About />
-				</section> */}
-				<section className="w-full section mt-20   max-h-auto h-screen  " id="projects">
+				</section>
+				<section className="w-full section   max-h-auto h-screen  " id="projects">
 					<Projects /> 
 				</section>
 
-				<section className="w-full section  min-h-h-screen-minus-20 max-h-auto h-screen relative " id="contact">
+				<section className="w-full section    h-screen  " id="contact">
 					<Contact />
 				</section>
 

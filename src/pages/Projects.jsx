@@ -41,19 +41,19 @@ function Projects() {
   };
 
   return (
-    <div className="w-full min-h-screen flex flex-col items-center pt-12">
-      <p className="text-2xl lg:text-4xl uppercase font-semibold text-blue-800">
+    <div className="w-full min-h-screen flex flex-col items-center pt-12 ">
+
+      <p className="text-2xl lg:text-5xl lg:mt-8 uppercase sm:mt-8 font-semibold text-blue-800">
         Projects
       </p>
-      <div className="border-2 w-12 mt-2 border-[#1a0505]"></div>
+
 
       <div className="relative w-[94%] bg-gray-200 mx-auto mt-12 p-6 overflow-hidden">
         {/* Previous Button */}
         <button
           onClick={prevSlide}
-          className={`absolute left-0 top-1/2 -translate-y-1/2 z-10 text-blue-800 ${
-            currentIndex === 0 ? "opacity-0" : "opacity-100"
-          } transition-opacity duration-300`}
+          className={`absolute left-0 top-1/2 -translate-y-1/2 z-10 text-blue-800 ${currentIndex === 0 ? "opacity-0" : "opacity-100"
+            } transition-opacity duration-300`}
           disabled={currentIndex === 0}
         >
           <FaArrowAltCircleLeft size={40} />
@@ -88,7 +88,7 @@ function Projects() {
                   className="flex items-center cursor-pointer mt-2 gap-x-2"
                   onClick={() => navigate(`/project/${project.id}`)}
                 >
-                  <p className="text-blue-800 text-xl">More</p>
+                  <p className="text-blue-800 text-lg">more details</p>
                   <FaArrowAltCircleRight size={20} className="text-blue-800" />
                 </div>
               </div>
@@ -99,11 +99,10 @@ function Projects() {
         {/* Next Button */}
         <button
           onClick={nextSlide}
-          className={`absolute right-0 top-1/2 -translate-y-1/2 text-blue-800 ${
-            currentIndex >= ProjectsList.length - itemsPerPage
+          className={`absolute right-0 top-1/2 -translate-y-1/2 text-blue-800 ${currentIndex >= ProjectsList.length - itemsPerPage
               ? "opacity-0"
               : "opacity-100"
-          } transition-opacity duration-300`}
+            } transition-opacity duration-300`}
           disabled={currentIndex >= ProjectsList.length - itemsPerPage}
         >
           <FaArrowAltCircleRight size={40} />

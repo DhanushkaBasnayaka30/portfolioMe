@@ -2,141 +2,68 @@ import { useState } from "react";
 import about from "../assets/about.png";
 import about1 from "../assets/about.png";
 import { toast } from "react-toastify";
+import { MdMarkEmailUnread } from "react-icons/md";
+import { IoCall } from "react-icons/io5";
+import { FaArrowAltCircleDown } from "react-icons/fa";
 function About() {
 	const [state, setState] = useState("skill");
 	return (
-		<div className="w-full h-full  flex flex-col">
-			<div className="text-center items-center justify-center flex flex-col ">
-				<h1 className="text-2xl lg:text-4xl uppercase font-semibold">about me</h1>
-				<div className="border-2 w-12 mt-2 border-purple-500"></div>
-			</div>
-			<div className="w-[90%] mx-auto h-80 border-2 border-black flex p-2">
-				<div className="w-2/5 h-full border border-black"></div>
-				<div className="w-1/5 h-full border border-black"></div>
-				<div className="w-2/5 h-full border border-black"></div>
-			</div>
-			<div className=" w-[90%] mx-auto h-full flex-col lg:flex-row flex lg:p-6 mt-8">
-				<div className="lg:w-1/2 w-full  h-full  lg:p-2 ">
-					<div className="w-full lg:flex-row flex-col flex lg:h-[400px] ">
-						<div className="lg:w-[380px] px-8 h-[450px] lg:h-[400px] flex items-center justify-center  lg:px-2 relative overflow-hidden ">
-							<div className="w-[330px] h-[330px] shadow-2xl  shadow-purple-300   rounded-full absolute bg-purple-500 bottom-12 z-[-10]"></div>
-							<img
+		<div className="w-full h-full bg-blue-800  flex flex-col">
+
+			<div className=" w-[90%] mx-auto h-full lg:flex-col flex-row lg:p-6 mt-8  ">
+				<p className="font-[cursive] text-8xl  mt-4   text-[#c9f07b]  lg:w-[80%] mx-auto">Hello...</p>
+
+				<div className="lg:w-[80%] w-full mx-auto  h-full  lg:p-2  ">
+					<div className="w-full lg:flex-col  flex-col flex lg:h-[400px] lg:w-[75%] mx-auto ">
+						{/* <div className="lg:w-[380px] px-8 h-[450px] lg:h-[400px] flex items-center justify-center  lg:px-2 relative overflow-hidden "> */}
+						{/* <div className="w-[330px] h-[330px] shadow-2xl  shadow-purple-300   rounded-full absolute bg-purple-500 bottom-12 z-[-10]"></div>
+							{/* <img
 								className="w-full h-full   bg-cover overflow-hidden rounded"
 								src={about}
 								alt="about image"
-							/>
+							/> */}
+						{/* </div> */}
+						<div className="w-full ">
+							<p className="mt-6 text-white  text-sm lg:text-lg text-justify p-2 lg:mt-8 lg:text-center  sm:text-base">
+								Hi, I’m Dhanushka Basnayaka, a passionate and dedicated Full-Stack
+								Developer currently pursuing my degree in Computer Science at the
+								University of Jaffna. I specialize in building dynamic and
+								user-friendly web applications that focus on delivering seamless
+								experiences for both users and clients.
+							</p>
+							<p className="text-sm lg:text-lg  text-white lg:text-center  text-justify p-2 mt-2 sm:text-base sm:mt-4">
+								I’m also an avid learner who enjoys sharing insights and
+								experiences from my web development journey. Through platforms
+								like LinkedIn and Instagram, I regularly post content that
+								inspires and educates others in the developer community. I’m
+								always open to job opportunities that allow me to contribute,
+								grow, and hone my skills further. If you’re looking for someone
+								who is passionate, skilled, and eager to make an impact, don’t
+								hesitate to get in touch.
+							</p>
 						</div>
+						<div className="lg:w-[99%]  w-full py-2 lg:px-4 flex lg:flex-row flex-row p-2  items-center   lg:mx-auto lg:mt-[1%]">
+							<div className="w-full h-full lg:text-base text-sm p-1 gap-y-3 flex flex-col lg:flex-row  lg:justify-center lg:gap-x-8 lg:items-center">
 
-						<div className="lg:w-[540px] w-full py-2 lg:px-4 flex flex-col ">
-							<div className="w-full h-full lg:text-base text-sm p-1 gap-y-3 flex flex-col ">
-								<div className="flex gap-x-3 ">
-									<p>Name :</p>
-									<p>Dhanushka Basnayaka</p>
+								<div className="flex gap-x-3 text-wrap lg:mt-4 mt-12 flex-wrap  items-center ">
+									<MdMarkEmailUnread color="#c9f07b"size={20} />
+									<p className="text-[#c9f07b] font-bold">dhanushkabasnayaka99@gmail.com</p>
 								</div>
-								<div className="flex gap-x-3 text-wrap  flex-wrap">
-									<p>Email :</p>
-									<p>dhanushkabasnayaka99@gmail.com</p>
-								</div>
-								<div className="flex gap-x-3">
-									<p>Mobile :</p>
-									<p>0773189716</p>
+								<div className="flex gap-x-3 items-center justify-start lg:mt-0">
+									<IoCall  size={20} color="#c9f07b" />
+									<p className="text-[#c9f07b] font-bold lat ">+94 773189716</p>
 								</div>
 							</div>
 						</div>
-					</div>
-					<div className="w-full lg:h-[360px] text-gray-600 text-justify p-4 mt-4 ">
-						<h1 className="text-xl lg:text-2xl font-semibold ">Get to know me!</h1>
-						<p className="mt-6  text-sm lg:text-base text-justify">
-							Hi, I’m Dhanushka Basnayaka, a passionate and dedicated Full-Stack
-							Developer currently pursuing my degree in Computer Science at the
-							University of Jaffna. I specialize in building dynamic and
-							user-friendly web applications that focus on delivering seamless
-							experiences for both users and clients.
-						</p>
-
-						<p className="text-sm lg:text-base">
-							I’m also an avid learner who enjoys sharing insights and
-							experiences from my web development journey. Through platforms
-							like LinkedIn and Instagram, I regularly post content that
-							inspires and educates others in the developer community. I’m
-							always open to job opportunities that allow me to contribute,
-							grow, and hone my skills further. If you’re looking for someone
-							who is passionate, skilled, and eager to make an impact, don’t
-							hesitate to get in touch.
-						</p>
-						<a href="#contact">
-
-							<button  className="bg-purple-500 lg:px-12 lg:py-3 text-xs px-6 py-2 uppercase mt-4 rounded text-white font-semibold text-[18px]">
+					<div className="w-full   text-gray-600 text-justify lg:mt-12 flex lg:justify-center  sm:mt-8 mt-8 p-2  md:mt-[8%] ">
+							<a href="#contact" className="">
+							<button className="bg-white flex md:mt-4  items-center justify-center  gap-x-2 lg:px-12 lg:py-3 -none text-xs px-6 py-3 sm:text-base uppercase mt-2 rounded text-blue-800 font-semibold text-[18px]">
 								Contact Me
+								<FaArrowAltCircleDown size={20} />
 							</button>
 						</a>
 					</div>
-				</div>
-				<div className="lg:w-1/2 w-full h-full p-2 ">
-					<div className=" w-full flex gap-x-2  items-center justify-start p-1">
-						<button
-							className={`${state === "skill"
-									? " border border-black text-gray-800 uppercase text-xs px-4 py-1 lg:text-base lg:px-12 lg:py-1  "
-									: " border-gray-500 text-gray-500 uppercase  border opacity-65 text-xs px-4 py-1 lg:text-base lg:px-12 lg:py-1  "
-								}`}
-							onClick={() => {
-								setState("skill");
-							}}>
-							skill
-						</button>
-						<button
-							className={`${state === "exp"
-									? " border border-black text-gray-800 uppercase text-xs px-4 py-1 lg:text-base lg:px-12 lg:py-1   "
-									: " border-gray-500 border  uppercase text-gray-500 opacity-65 text-xs px-4 py-1 lg:text-base lg:px-12 lg:py-1  "
-								}`}
-							onClick={() => {
-								setState("exp");
-							}}>
-							experience
-						</button>
 					</div>
-					{state === "skill" ? (
-						<div className="w-full h-full  p-2">
-							<p className="capitalize text-xl lg:text-2xl mt-8 text-gray-700 font-semibold">my skills</p>
-
-							<div className="w-full h-full flex mt-12  gap-4 flex-wrap text-sm lg:text-base">
-								<div>
-									<p className="text-gray-800 w-auto h-auto  rounded-sm px-5 py-1 bg-gray-300">
-										HTML
-									</p>
-								</div>
-								<div>
-									<p className="text-gray-800 w-auto h-auto  rounded-sm px-5 py-1 bg-gray-300">
-										CSS
-									</p>
-								</div>
-								<div>
-									<p className="text-gray-800 w-auto h-auto  rounded-sm px-5 py-1 bg-gray-300">
-										Taiwind
-									</p>
-								</div>
-								<div>
-									<p className="text-gray-800 w-auto h-auto  rounded-sm px-5 py-1 bg-gray-300">
-										REACT
-									</p>
-								</div>
-								<div>
-									<p className="text-gray-800 w-auto h-auto  rounded-sm px-5 py-1 bg-gray-300">
-										Node js
-									</p>
-								</div>
-								<div>
-									<p className="text-gray-800 w-auto h-auto  rounded-sm px-5 py-1 bg-gray-300">
-										My Sql
-									</p>
-								</div>
-							</div>
-						</div>
-					) : (
-						<div className="w-full h-[300px] bg-gray-200 flex items-center justify-center">
-							<p>comming soon</p>
-						</div>
-					)}
 				</div>
 			</div>
 		</div>

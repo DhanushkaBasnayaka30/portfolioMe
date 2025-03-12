@@ -1,6 +1,8 @@
 import React, { useRef } from "react";
 import emailjs from "@emailjs/browser";
+import { BsSend } from "react-icons/bs";
 import { toast } from "react-toastify";
+import { IoSendSharp } from "react-icons/io5";
 
 export const ContactUs = () => {
 	const emailJsKey = import.meta.env.VITE_EMAILJS_KEY;
@@ -32,7 +34,7 @@ export const ContactUs = () => {
 			onSubmit={sendEmail}
 			className="flex items-center justify-center flex-col w-full gap-y-8 p-4 ">
 			<div className="w-full flex flex-col justify-center gap-y-2 text-sm lg:text-base">
-				<label>Name</label>
+				<label className="text-blue-800">Name</label>
 				<input
 					required
 					className="lg:w-[90%] rounded bg-gray-200 float-start flex h-16 pl-2 gap-y-2 outline-none"
@@ -42,7 +44,7 @@ export const ContactUs = () => {
 				/>
 			</div>
 			<div className="w-full flex flex-col justify-center gap-y-2">
-				<label>Email</label>
+				<label className="text-blue-800">Email</label>
 				<input
 					required
 					className="lg:w-[90%]  rounded bg-gray-200 flex h-16 pl-2 outline-none"
@@ -52,7 +54,7 @@ export const ContactUs = () => {
 				/>
 			</div>
 			<div className="w-full flex flex-col justify-center gap-y-2">
-				<label>Message</label>
+				<label className="text-blue-800">Message</label>
 				<textarea
 					required
 					className="lg:w-[90%] pt-2 rounded bg-gray-200 flex text-sm lg:text-base h-20 lg:h-40 pl-2 outline-none"
@@ -61,8 +63,15 @@ export const ContactUs = () => {
 				/>
 			</div>
 			<div className=" h-20 w-full cursor-pointer flex items-center justify-start ">
-				<input className="px-12 text-center font-semibold cursor-pointer text-white py-1 lg:py-2 bg-purple-500 rounded" type="submit" value="Send Message" />
+				<div>
+
+				</div>
+				<div className="bg-blue-800  px-6 gap-x-2 rounded flex justify-center items-center">
+
+				<input className="text-center font-semibold cursor-pointer  py-3 lg:py-2 text-[#c9f07b] " type="submit" value="Send Message" />
+				<IoSendSharp   size={20} color="#c9f07b"/>
 			</div>
+				</div>
 		</form>
 	);
 };

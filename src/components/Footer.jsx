@@ -6,7 +6,7 @@ import { IoLogoGithub } from "react-icons/io";
 function Footer() {
 	return (
 		<>
-			<div className="w-full h-[310px] bg-blue-800">
+			<div className="w-full h-[310px] bg-black">
 				<div className="w-[90%] lg:w-[70%] mx-auto  h-full ">
 					<div className="w-full h-4/5  flex text-white  lg:flex-row flex-col">
 						<div className="flex lg:w-1/2 items-start flex-col justify-center gap-y-4 mt-4">
