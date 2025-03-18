@@ -11,7 +11,7 @@ import { FaArrowAltCircleRight } from "react-icons/fa";
 import { FaArrowCircleDown } from "react-icons/fa";
 import { BiSolidDownload } from "react-icons/bi";
 import { LuDownload } from "react-icons/lu";
-import {DhanushkaBasnayaka} from "../../src/assets/DhanushkaBasnayaka.pdf"
+import DhanushkaBasnayaka from "../../src/assets/DhanushkaBasnayaka.pdf"
 
 
 function Home() {

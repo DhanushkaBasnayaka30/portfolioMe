@@ -43,13 +43,13 @@ function About() {
 							</p>
 						</div>
 						<div className="lg:w-[99%]  w-full py-2 lg:px-4 flex lg:flex-row flex-row p-2  items-center   lg:mx-auto lg:mt-[1%]">
-							<div className="w-full h-full lg:text-base text-sm p-1 gap-y-3 flex flex-col lg:flex-row  lg:justify-center lg:gap-x-8 lg:items-center">
+							<div className="w-full h-full lg:text-base  lg:justify-center text-sm p-1 gap-y-3 flex flex-col lg:flex-row  lg:justify-center lg:gap-x-8 lg:items-center">
 
-								<div className="flex gap-x-3 text-wrap lg:mt-4 mt-12 flex-wrap  items-center ">
+								<div className="flex gap-x-3  text-wrap lg:mt-4 mt-12 flex-wrap  items-center ">
 									<MdMarkEmailUnread color="#c9f07b"size={20} />
 									<p className="text-[#c9f07b] font-bold">dhanushkabasnayaka99@gmail.com</p>
 								</div>
-								<div className="flex gap-x-3 items-center justify-start lg:mt-0">
+								<div className="flex gap-x-3 items-center   justify-start lg:mt-4">
 									<IoCall  size={20} color="#c9f07b" />
 									<p className="text-[#c9f07b] font-bold lat ">+94 773189716</p>
 								</div>
