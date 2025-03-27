@@ -3,7 +3,7 @@ import { IoArrowBackCircleOutline } from "react-icons/io5";
 import ProjectsList from "../../constant/ProjectsList";
 import { useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
-
+import { FaHome } from "react-icons/fa";
 
 
 
@@ -47,24 +47,24 @@ export default function Project() {
   }
 
   return (
-    <div className="bg-black h-screen w-full  p-3  ">
-      <div className="w-[99%] h-[99%] bg-white mx-auto rounded-md  sm:overflow-y-scroll relative ">
-        <div className=" mx-auto  h-24  bg-blue-800 flex items-center justify-start  ">
+    <div className=" h-screen w-full  ">
+      <div className="w-[100%] h-[99%] bg-white mx-auto rounded-md  sm:overflow-y-scroll relative ">
+        <div className=" mx-auto  h-24   flex items-center justify-start border ">
 
-          <IoArrowBackCircleOutline
+          <FaHome 
             onClick={() => navigate("/#projects")}
-            className="cursor-pointer"
-            size={60}
-            color="#c9f07b"
+            className="cursor-pointer  border-black  ml-4"
+            size={40}
+            color="#3146ab"
           />
 
         </div>
 
         <div className="w-[90%]  h-auto  absolute top-24 left-[5%] ">
-          <div className="w-full lg:h-[700px] h-auto  mt-4 lg:flex-col flex-col flex bg-gray-100 lg:p-4 p-1">
+          <div className="w-full lg:h-[700px] h-auto  mt-4 lg:flex-col flex-col flex bg-gray-1w00 lg:p-4 p-1">
             <div className="w-full lg:w-[90%] mx-auto h-full flex flex-col gap-y-4">
 
-              <div className="w-full lg:h-4/5 h-[210px] sm:h-[350px] flex ">
+              <div className="w-full lg:h-4/5 h-[210px] sm:h-[350px] flex border border-black rounded">
                 {/* Image Carousel */}
                 <img
                   src={selectedProject["image"][imageIndexes[selectedProject.id]]}
@@ -81,7 +81,7 @@ export default function Project() {
                 </div>
                 <div
                   onClick={() => nextImage(selectedProject["id"], selectedProject["image"].length)}
-                  className="bg-gray-200 border border-purple-500 cursor-pointer rounded p-1"
+                  className="bg-gray-200 border border-purple-500  cursor-pointer rounded p-1"
                 >
                   <IoIosArrowForward className="text-xl lg:text-2xl" />
                 </div>

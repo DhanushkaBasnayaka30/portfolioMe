@@ -68,7 +68,7 @@ function Projects() {
             {ProjectsList.map((project, index) => (
               <div
                 key={index}
-                className="w-full sm:w-[320px] md:w-[450px] lg:w-[600px] h-[500px] bg-white border-2 border-blue-800 rounded-lg p-4 flex-shrink-0"
+                className="w-full sm:w-[320px] md:w-[450px] lg:w-[600px] h-[550px] bg-white border-2 border-blue-800 rounded-lg p-4 flex-shrink-0"
               >
                 <div className="w-full h-[320px]">
                   <img
