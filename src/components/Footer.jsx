@@ -27,16 +27,22 @@ function Footer() {
 								</p>
 							</div>
 							<div className="flex w-full lg:justify-end  gap-x-2  justify-start">
-								<FaFacebookF className="w-10 h-10 hover:text-purple-500 p-2 rounded-md cursor-pointer " />
+								<a href="https://www.facebook.com/dhanushka.basnayaka.90/">
+									<FaFacebookF className="w-10 h-10 hover:text-purple-500 p-2 rounded-md cursor-pointer " />
+								</a>
 								<AiFillInstagram className="w-10 h-10  hover:text-purple-500 p-2 rounded-md cursor-pointer" />
-								<FaLinkedin className="w-10 h-10 hover:text-purple-500 p-2 rounded-md cursor-pointer" />
+								<a href="https://www.linkedin.com/authwall?trk=gf&trkInfo=AQGrYU8d5wQpBgAAAZWJWdJAYTpk_cmSP_SD8_Yp2iytxrXqKFV9oQ_5DmjrIA5RWDWxn41taAFtS9P3wgiq9NUY6SuB2rdDf8lXlz6Mq-z7qQ6sWRunYF91zbdckwL7fwAE8DE=&original_referer=&sessionRedirect=https%3A%2F%2Fwww.linkedin.com%2Fin%2Fdhanushka-basnayaka">
+									<FaLinkedin className="w-10 h-10 hover:text-purple-500 p-2 rounded-md cursor-pointer" />
+								</a>
+								<a href="https://github.com/DhanushkaBasnayaka30">
 								<IoLogoGithub className="w-10 h-10 hover:text-purple-500 p-2 rounded-md cursor-pointer" />
+								</a>
 							</div>
 						</div>
 					</div>
 					<div className="w-full h-[1px] bg-gray-200 "></div>
 					<div className="w-full h-1/5 items-center justify-center  flex">
-					<p className="text-white text-xs text-center ">© Copyright 2025 . Made by Dhanushka Basnayaka</p></div>
+						<p className="text-white text-xs text-center ">© Copyright 2025 . Made by Dhanushka Basnayaka</p></div>
 				</div>
 			</div>
 		</>
