@@ -10,45 +10,45 @@ import PageLocation from "../components/PageLocation";
 
 function MainPage() {
 
-	useEffect(() => {
-    const sections = document.querySelectorAll(".section");
-    let isScrolling = false;
+	// useEffect(() => {
+  //   const sections = document.querySelectorAll(".section");
+  //   let isScrolling = false;
 
-    const scrollToSection = (direction) => {
-      if (isScrolling) return;
-      isScrolling = true;
+  //   const scrollToSection = (direction) => {
+  //     if (isScrolling) return;
+  //     isScrolling = true;
 
-      const currentSection = [...sections].find((section) => {
-        const rect = section.getBoundingClientRect();
-        return rect.top >= 0 && rect.top < window.innerHeight;
-      });
+  //     const currentSection = [...sections].find((section) => {
+  //       const rect = section.getBoundingClientRect();
+  //       return rect.top >= 0 && rect.top < window.innerHeight;
+  //     });
 
-      let nextSection;
-      if (direction === "down") {
-        nextSection = currentSection?.nextElementSibling;
-      } else {
-        nextSection = currentSection?.previousElementSibling;
-      }
+  //     let nextSection;
+  //     if (direction === "down") {
+  //       nextSection = currentSection?.nextElementSibling;
+  //     } else {
+  //       nextSection = currentSection?.previousElementSibling;
+  //     }
 
-      if (nextSection) {
-        nextSection.scrollIntoView({ behavior: "smooth" });
-      }
+  //     if (nextSection) {
+  //       nextSection.scrollIntoView({ behavior: "smooth" });
+  //     }
 
-      setTimeout(() => (isScrolling = false), 800); // Prevent fast scrolling
-    };
+  //     setTimeout(() => (isScrolling = false), 0); // Prevent fast scrolling
+  //   };
 
-    const handleScroll = (event) => {
-      if (event.deltaY > 0) {
-        scrollToSection("down");
-      } else {
-        scrollToSection("up");
-      }
-    };
+  //   const handleScroll = (event) => {
+  //     if (event.deltaY > 0) {
+  //       scrollToSection("down");
+  //     } else {
+  //       scrollToSection("up");
+  //     }
+  //   };
 
-    window.addEventListener("wheel", handleScroll);
+  //   window.addEventListener("wheel", handleScroll);
 
-    return () => window.removeEventListener("wheel", handleScroll);
-  }, []);
+  //   return () => window.removeEventListener("wheel", handleScroll);
+  // }, []);
 
 	return (
 		<>
@@ -63,7 +63,7 @@ function MainPage() {
 					<Home />
 				</section>
 				<section
-					className="w-full  h-screen section "
+					className="w-full h-auto min-h-screen section "
 					id="about">
 					<About />
 				</section>

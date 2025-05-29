@@ -5,8 +5,27 @@ import { toast } from "react-toastify";
 import { MdMarkEmailUnread } from "react-icons/md";
 import { IoCall } from "react-icons/io5";
 import { FaArrowAltCircleDown } from "react-icons/fa";
+
+const skill = [
+	{ name: 'HTML', image: 'html' },
+	{ name: 'CSS', image: 'css' },
+	{ name: 'Java Script', image: 'js' },
+	{ name: 'Java ', image: 'java' },
+	{ name: 'React js', image: 'skill1' },
+	{ name: 'Next js', image: 'next1' },
+	{ name: 'Tailwind CSS', image: 'skill4' },
+	{ name: 'Node js', image: 'node' },
+	{ name: 'MonogoDB ', image: 'mongo' },
+	{ name: 'My SQL', image: 'sql' },
+	{ name: 'GitHub', image: 'git' }
+];
+
+
+
+
 function About() {
-	const [state, setState] = useState("skill");
+
+
 	return (
 		<div className="w-full h-full bg-blue-800  flex flex-col">
 
@@ -46,27 +65,47 @@ function About() {
 							<div className="w-full h-full lg:text-base  lg:justify-center text-sm p-1 gap-y-3 flex flex-col lg:flex-row  lg:justify-center lg:gap-x-8 lg:items-center">
 
 								<div className="flex gap-x-3  text-wrap lg:mt-4 mt-12 flex-wrap  items-center ">
-									<MdMarkEmailUnread color="#c9f07b"size={20} />
+									<MdMarkEmailUnread color="#c9f07b" size={20} />
 									<p className="text-[#c9f07b] font-bold">dhanushkabasnayaka99@gmail.com</p>
 								</div>
 								<div className="flex gap-x-3 items-center   justify-start lg:mt-4">
-									<IoCall  size={20} color="#c9f07b" />
+									<IoCall size={20} color="#c9f07b" />
 									<p className="text-[#c9f07b] font-bold lat ">+94 773189716</p>
 								</div>
 							</div>
 						</div>
-					<div className="w-full   text-gray-600 text-justify lg:mt-12 flex lg:justify-center  sm:mt-8 mt-8 p-2  md:mt-[8%] ">
+						<div className="w-full   text-gray-600 text-justify lg:mt-12 flex lg:justify-center  sm:mt-8 mt-8 p-2  md:mt-[8%] ">
 							<a href="#contact" className="">
-							<button className="bg-white flex md:mt-4  items-center justify-center  gap-x-2 lg:px-12 lg:py-3 -none text-xs px-6 py-3 sm:text-base uppercase mt-2 rounded text-blue-800 font-semibold text-[18px]">
-								Contact Me
-								<FaArrowAltCircleDown size={20} />
-							</button>
-						</a>
-					</div>
+								<button className="bg-white flex md:mt-4  items-center justify-center  gap-x-2 lg:px-12 lg:py-3 -none text-xs px-6 py-3 sm:text-base uppercase mt-2 rounded text-blue-800 font-semibold text-[18px]">
+									Contact Me
+									<FaArrowAltCircleDown size={20} />
+								</button>
+							</a>
+						</div>
 					</div>
 				</div>
+				<p className="font-[cursive] text-8xl mt-12 lg:mt-28   text-[#c9f07b]  lg:w-[80%] mx-auto ">Skills</p>
+				<div className="lg:w-[70%] w-full gap-x-3 md:gap-0 gap-y-10 justify-center items-center flex flex-wrap  mx-auto mt-20 pb-12 ">
+					{skill.map((item, index) => (
+						<div
+							key={index}
+							className="flex flex-col justify-center items-center w-28 h-28 md:w-52 md:h-52 "
+						>
+							<div className="rounded-full w-28 h-28 md:w-32 md:h-32 aspect-square border-[#c9f07b] bg-blue-900 border-4 p-4">
+								<img src={`/src/assets/${item.image}.png`} className="w-full bg-center object-contain aspect-square h-full" alt={`React Logo ${index}`} />
+							</div>
+							<p className="text-xl md:mt-2 text-white">{item.name}</p>
+						</div>
+					))}
+
+				</div>
 			</div>
+
+
+
 		</div>
+
+
 	);
 }
 
